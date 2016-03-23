@@ -1,0 +1,15 @@
+{
+  "name": "adamkopec/coders2",
+  "description": "Second edition of Coders Meetings - Training Package",
+  "minimum-stability": "stable",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Adam Kopeć",
+      "email": "adam.kopec@gmail.com"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "4.8.x"
+  }
+}
