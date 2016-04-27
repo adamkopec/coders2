@@ -427,7 +427,9 @@ namespace Solution3B {
         {
             $processor = new DataProcessor(
                 new MagicalDataRetrieverProxy(
-                    new MagicalDataRetriever(new FakeWebServiceHandle()),
+                    new MagicalDataRetriever(
+                        new FakeWebServiceHandle()
+                    ),
                     ['foo' => 'bar']
                 )
             );
