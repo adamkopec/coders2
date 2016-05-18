@@ -9,6 +9,12 @@
       "email": "adam.kopec@gmail.com"
     }
   ],
+  "autoload": {
+    "psr-4": {"Coders\\": "src/"}
+  },
+  "autoload-dev": {
+    "psr-4": {"Coders\\": "tests/"}
+  },
   "require": {
     "phpunit/phpunit": "4.8.x"
   }

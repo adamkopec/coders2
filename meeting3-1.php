@@ -58,6 +58,10 @@ namespace Problem
             return $this->r;
         }
     }
+    
+    class Hexagon extends Shape{
+        
+    }
 
     class AreaCalculator
     {
