@@ -10,10 +10,10 @@
     }
   ],
   "autoload": {
-    "psr-4": {"Coders\\": "src/"}
+    "psr-4": {"NumberSystems\\": "src/NumberSystems/"}
   },
   "autoload-dev": {
-    "psr-4": {"Coders\\": "tests/"}
+    "psr-4": {"NumberSystems\\": "tests/NumberSystems/"}
   },
   "require": {
     "phpunit/phpunit": "4.8.x"
