@@ -19,9 +19,6 @@ use NumberSystems\NumberSystem\Roman;
 
 class Converter
 {
-    
-    
-    protected $romans = [null, 'I','II','III','IV','V','VI','VII','VIII','IX','X', 'XI'];
 
     public function convert(NumberSystem $from, NumberSystem $to, $value)
     {
@@ -31,9 +28,9 @@ class Converter
             return $value;
         }
 
-        if ($fromClass == Arabic::class && $toClass == Roman::class){
-            return $this->romans[(int) $value];
-        }
+        $arabicValue = $from->toArabic($value);
+        
+        return $to->fromArabic($arabicValue);
 
     }
 }

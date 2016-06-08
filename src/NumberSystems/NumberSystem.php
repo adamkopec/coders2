@@ -11,5 +11,16 @@ namespace NumberSystems;
 
 interface NumberSystem
 {
+    /**
+     * @param string $value
+     * @return int
+     */
+    public function toArabic($value);
+
+    /**
+     * @param int $value
+     * @return string
+     */
+    public function fromArabic($value); 
 
 }

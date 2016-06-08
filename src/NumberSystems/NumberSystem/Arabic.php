@@ -12,5 +12,15 @@ use NumberSystems\NumberSystem;
 
 class Arabic implements NumberSystem
 {
+    public function toArabic($value)
+    {
+        return (int) $value;
+    }
+
+    public function fromArabic($value)
+    {
+        return (string) $value;
+    }
+
 
 }
