@@ -16,7 +16,6 @@ use NumberSystems\NumberSystem\Roman;
  * roman, rzymski: I -> 1, V -> 5, X -> 10, L -> 50, C -> 100, D -> 500, M -> 1000
  * urnfield, prastary: / -> 1, \ -> 5, /// -> 3, /\ -> 6, //\\ -> 12
  */
-
 class Converter
 {
 
@@ -24,12 +23,9 @@ class Converter
     {
         $fromClass = get_class($from);
         $toClass = get_class($to);
-        if ($fromClass == $toClass) {
-            return $value;
-        }
 
         $arabicValue = $from->toArabic($value);
-        
+
         return $to->fromArabic($arabicValue);
 
     }

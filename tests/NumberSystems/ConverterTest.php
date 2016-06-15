@@ -1,6 +1,7 @@
 <?php
 
 namespace NumberSystems;
+
 use NumberSystems\NumberSystem\Arabic;
 use NumberSystems\NumberSystem\Roman;
 use NumberSystems\NumberSystem\Urnfield;
@@ -26,7 +27,31 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('/', $urnfield);
     }
 
-    public function testConvertsOneToOne() {
+    public function testWxample()
+    {
+        $mock = $this->getMockBuilder(NumberSystem::class)
+            ->getMock();
+
+        $value = 'cos';
+        $arabicValue = 1;
+        
+        $mock->expects($this->any())
+            ->method('toArabic')
+            ->with($this->equalTo($value))
+            ->willReturn($arabicValue);
+
+        $result = 'test';
+        $mock->expects($this->any())
+            ->method('fromArabic')
+            ->with($this->equalTo($arabicValue))
+            ->willReturn($result);
+
+        $converter = new Converter();
+        $this->assertEquals($result, $converter->convert($mock, $mock, $value));
+    }
+
+    public function testConvertsOneToOne()
+    {
         $converter = new Converter();
 
         $this->assertEquals('I', $converter->convert(new Arabic(), new Roman(), '1'));
