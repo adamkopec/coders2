@@ -27,7 +27,7 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('/', $urnfield);
     }
 
-    public function testWxample()
+    public function testItConvertsBetweenAnySystems()
     {
         $mock = $this->getMockBuilder(NumberSystem::class)
             ->getMock();
