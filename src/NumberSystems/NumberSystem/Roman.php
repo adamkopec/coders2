@@ -13,16 +13,52 @@ use NumberSystems\NumberSystem;
 class Roman implements NumberSystem
 {
 
-    protected $romans = [null, 'I','II','III','IV','V','VI','VII','VIII','IX','X', 'XI', 'XII'];
+    protected $romans = [
+        'M' => 1000,
+        'CM' => 900,
+        'D' => 500,
+        'CD' => 400,
+        'C' => 100,
+        'XC' => 90,
+        'L' => 50,
+        'XL' => 40,
+        'X' => 10,
+        'IX' => 9,
+        'V' => 5,
+        'IV' => 4,
+        'I' => 1
+    ];
     
     public function toArabic($value)
     {
-        return array_flip(array_slice($this->romans, 1))[$value ] + 1;
+        foreach ($value as $char) {
+            if (!array_key_exists($char, $this->romans)) {
+                throw new \InvalidArgumentException();
+            }
+        }
+        $result = 0;
+        foreach ($this->romans as $roman => $arabic) {
+
+            while (strpos($value, $roman) === 0) {
+                $result += $arabic;
+                $value = substr($value, strlen($roman));
+            }
+        }
+        return $result;
     }
 
     public function fromArabic($value)
     {
-        return $this->romans[$value];
+        $result = '';
+
+        foreach ($this->romans as $roman => $arabic) {
+
+            while ($value-$arabic >= 0) {
+                $result .= $roman;
+                $value -= $arabic;
+            }
+        }
+        return $result;
     }
 
 }

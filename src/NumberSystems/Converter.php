@@ -18,15 +18,9 @@ use NumberSystems\NumberSystem\Roman;
  */
 class Converter
 {
-
     public function convert(NumberSystem $from, NumberSystem $to, $value)
     {
-        $fromClass = get_class($from);
-        $toClass = get_class($to);
-
         $arabicValue = $from->toArabic($value);
-
         return $to->fromArabic($arabicValue);
-
     }
 }
