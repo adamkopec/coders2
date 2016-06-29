@@ -58,7 +58,31 @@ class RomanTest extends \PHPUnit_Framework_TestCase
             ['12345'],
             ['#@#%$^&%^*&*('],
             [',,,'],
-            ['II I']
+            ['II I'],
+            ['LL'],
+            ['LLL']
+        ];
+    }
+
+    /**
+     * @dataProvider incorrectArabicToRomanProvider
+     * @param $arabic
+     * @expectedException \InvalidArgumentException
+     */
+    public function testIncorrectArabicToRoman($arabic)
+    {
+        $roman = new Roman();
+        $roman->fromArabic($arabic);
+    }
+
+    public function incorrectArabicToRomanProvider()
+    {
+        return [
+            [-1],
+            [0.664],
+            [73829574385947382],
+            ['666'],
+            [0]
         ];
     }
 
