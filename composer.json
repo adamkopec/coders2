@@ -10,10 +10,16 @@
     }
   ],
   "autoload": {
-    "psr-4": {"NumberSystems\\": "src/NumberSystems/"}
+    "psr-4": {
+      "NumberSystems\\": "src/NumberSystems/",
+      "VendingMachine\\": "src/VendingMachine/"
+    }
   },
   "autoload-dev": {
-    "psr-4": {"NumberSystems\\": "tests/NumberSystems/"}
+    "psr-4": {
+      "NumberSystems\\": "tests/NumberSystems/",
+      "VendingMachine\\": "tests/VendingMachine/"
+    }
   },
   "require": {
     "phpunit/phpunit": "4.8.x"
